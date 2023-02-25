@@ -4,6 +4,15 @@
       {
         "src": "Ardas_interiror_Proj/wsgi.py",
         "use": "@vercel/python",
+        "env": {
+        "APT_CACHE_DIR": "/tmp/cache/apt",
+        "VERCEL_BUILD_DIR": "/vercel/path0"
+      },
+      "commands": [
+        "apt-get update -qq && apt-get install -y libmariadbclient-dev",
+        "pip install --upgrade pip && pip install -r requirements.txt"
+      ],
+      
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
       },
       {
